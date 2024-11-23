@@ -7,7 +7,6 @@ import com.project.examportalbackend.services.QuestionService;
 import com.project.examportalbackend.services.QuizService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -21,6 +20,7 @@ import java.util.List;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -45,12 +45,28 @@ public class QuestionControllerTest {
         question.setOption3("Option 3");
         question.setOption4("Option 4");
         question.setAnswer("Option 1");
-        Mockito.when(questionService.addQuestion(question)).thenReturn(question);
+        when(questionService.addQuestion(question)).thenReturn(question);
 
         ResponseEntity<?> response = questionController.addQuestion(question);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(question, response.getBody());
+    }
+
+    @Test
+    public void testAddQuestion_Failure() {
+        Question question = new Question();
+        question.setQuesId(1L);
+        question.setContent("Example question");
+
+        when(questionService.addQuestion(question)).thenThrow(new RuntimeException("Mock Exception"));
+
+        ResponseEntity<?> response = questionController.addQuestion(question);
+
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR.value(), response.getStatusCodeValue());
+        assertEquals("There is an Exception", response.getBody());
+
+        verify(questionService, times(1)).addQuestion(question);
     }
 
     @Test
@@ -74,7 +90,7 @@ public class QuestionControllerTest {
         question2.setAnswer("Option 3");
         questions.add(question1);
         questions.add(question2);
-        Mockito.when(questionService.getQuestions()).thenReturn(questions);
+        when(questionService.getQuestions()).thenReturn(questions);
 
         ResponseEntity<?> response = questionController.getQuestions();
 
@@ -82,6 +98,18 @@ public class QuestionControllerTest {
         assertTrue(response.getBody() instanceof List);
         List<Question> responseQuestions = (List<Question>) response.getBody();
         assertEquals(questions.size(), responseQuestions.size());
+    }
+
+    @Test
+    public void testGetQuestions_Failure() {
+        when(questionService.getQuestions()).thenThrow(new RuntimeException("Mock Exception"));
+
+        ResponseEntity<?> response = questionController.getQuestions();
+
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR.value(), response.getStatusCodeValue());
+        assertEquals("There is an Exception", response.getBody());
+
+        verify(questionService, times(1)).getQuestions();
     }
 
     @Test
@@ -95,7 +123,7 @@ public class QuestionControllerTest {
         question.setOption3("Option 3");
         question.setOption4("Option 4");
         question.setAnswer("Option 1");
-        Mockito.when(questionService.getQuestion(questionId)).thenReturn(question);
+        when(questionService.getQuestion(questionId)).thenReturn(question);
 
         ResponseEntity<?> response = questionController.getQuestion(questionId);
 
@@ -106,12 +134,26 @@ public class QuestionControllerTest {
     @Test
     public void testGetQuestionById_NotFound() {
         Long questionId = 1L;
-        Mockito.when(questionService.getQuestion(questionId)).thenReturn(null);
+        when(questionService.getQuestion(questionId)).thenReturn(null);
 
         ResponseEntity<?> response = questionController.getQuestion(questionId);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertNull(response.getBody());
+    }
+
+    @Test
+    public void testGetQuestionById_Failure() {
+        Long questionId = 1L;
+
+        when(questionService.getQuestion(questionId)).thenThrow(new RuntimeException("Mock Exception"));
+
+        ResponseEntity<?> response = questionController.getQuestion(questionId);
+
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR.value(), response.getStatusCodeValue());
+        assertEquals("There is an Exception", response.getBody());
+
+        verify(questionService, times(1)).getQuestion(questionId);
     }
 
     @Test
@@ -142,7 +184,7 @@ public class QuestionControllerTest {
         questions.add(question1);
         questions.add(question2);
         quiz.setQuestions(questions);
-        Mockito.when(quizService.getQuiz(quizId)).thenReturn(quiz);
+        when(quizService.getQuiz(quizId)).thenReturn(quiz);
 
         ResponseEntity<?> response = questionController.getQuestionsByQuiz(quizId);
 
@@ -150,5 +192,108 @@ public class QuestionControllerTest {
         assertTrue(response.getBody() instanceof Set);
         Set<Question> responseQuestions = (Set<Question>) response.getBody();
         assertEquals(questions.size(), responseQuestions.size());
+    }
+
+    @Test
+    public void testGetQuestionsByQuiz_Failure() {
+        Long quizId = 1L;
+
+        when(quizService.getQuiz(quizId)).thenThrow(new RuntimeException("Mock Exception"));
+
+        ResponseEntity<?> response = questionController.getQuestionsByQuiz(quizId);
+
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR.value(), response.getStatusCodeValue());
+        assertEquals("There is an Exception", response.getBody());
+
+        verify(quizService, times(1)).getQuiz(quizId);
+    }
+
+    @Test
+    public void testUpdateQuestion_Success() {
+        Long questionId = 1L;
+        Question existingQuestion = new Question();
+        existingQuestion.setQuesId(questionId);
+        existingQuestion.setContent("Old Content");
+
+        Question updatedQuestion = new Question();
+        updatedQuestion.setQuesId(questionId);
+        updatedQuestion.setContent("Updated Content");
+
+        when(questionService.getQuestion(questionId)).thenReturn(existingQuestion);
+        when(questionService.updateQuestion(any(Question.class))).thenReturn(updatedQuestion);
+
+        ResponseEntity<?> response = questionController.updateQuestion(questionId, updatedQuestion);
+
+        assertEquals(HttpStatus.OK.value(), response.getStatusCodeValue());
+        assertEquals(updatedQuestion, response.getBody());
+
+        verify(questionService, times(1)).getQuestion(questionId);
+        verify(questionService, times(1)).updateQuestion(updatedQuestion);
+    }
+
+    @Test
+    public void testUpdateQuestion_NotFound() {
+        Long questionId = 1L;
+        Question updatedQuestion = new Question();
+        updatedQuestion.setQuesId(questionId);
+        updatedQuestion.setContent("Updated Content");
+
+        when(questionService.getQuestion(questionId)).thenReturn(null);
+
+        ResponseEntity<?> response = questionController.updateQuestion(questionId, updatedQuestion);
+
+        assertEquals(HttpStatus.BAD_REQUEST.value(), response.getStatusCodeValue());
+        assertEquals("Question with id : 1, doesn't exists", response.getBody());
+
+        verify(questionService, times(1)).getQuestion(questionId);
+        verify(questionService, never()).updateQuestion(updatedQuestion);
+    }
+
+    @Test
+    public void testUpdateQuestion_Failure() {
+        Long questionId = 1L;
+        Question updatedQuestion = new Question();
+        updatedQuestion.setQuesId(questionId);
+        updatedQuestion.setContent("Updated Content");
+
+        when(questionService.getQuestion(questionId)).thenReturn(updatedQuestion);
+        when(questionService.updateQuestion(any(Question.class))).thenThrow(new RuntimeException("Mock Exception"));
+
+        ResponseEntity<?> response = questionController.updateQuestion(questionId, updatedQuestion);
+
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR.value(), response.getStatusCodeValue());
+        assertEquals("There is an Exception", response.getBody());
+
+        verify(questionService, times(1)).getQuestion(questionId);
+        verify(questionService, times(1)).updateQuestion(updatedQuestion);
+    }
+
+
+    @Test
+    public void testDeleteQuestion_Success() {
+        Long questionId = 1L;
+
+        doNothing().when(questionService).deleteQuestion(questionId);
+
+        ResponseEntity<?> response = questionController.deleteQuestion(questionId);
+
+        assertEquals(HttpStatus.OK.value(), response.getStatusCodeValue());
+        assertEquals(true, response.getBody());
+
+        verify(questionService, times(1)).deleteQuestion(questionId);
+    }
+
+    @Test
+    public void testDeleteQuestion_Failure() {
+        Long questionId = 1L;
+
+        doThrow(new RuntimeException("Mock Exception")).when(questionService).deleteQuestion(questionId);
+
+        ResponseEntity<?> response = questionController.deleteQuestion(questionId);
+
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR.value(), response.getStatusCodeValue());
+        assertEquals("There is an Exception", response.getBody());
+
+        verify(questionService, times(1)).deleteQuestion(questionId);
     }
 }

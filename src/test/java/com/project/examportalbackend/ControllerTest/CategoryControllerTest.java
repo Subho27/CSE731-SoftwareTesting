@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -44,6 +44,23 @@ public class CategoryControllerTest {
     }
 
     @Test
+    public void testAddCategory_Failure() {
+        Category category = new Category();
+        category.setTitle("Test Category");
+        category.setDescription("Test Description");
+
+        when(categoryService.addCategory(any(Category.class)))
+                .thenThrow(new RuntimeException("Mock Exception"));
+
+        ResponseEntity<?> response = categoryController.addCategory(category);
+
+        assertEquals(500, response.getStatusCodeValue());
+        assertEquals("There is an Exception", response.getBody());
+
+        verify(categoryService, times(1)).addCategory(any(Category.class));
+    }
+
+    @Test
     public void testGetCategories_Success() {
         List<Category> categories = new ArrayList<>();
         Category category1 = new Category();
@@ -63,6 +80,18 @@ public class CategoryControllerTest {
         assertTrue(response.getBody() instanceof List);
         List<Category> responseCategories = (List<Category>) response.getBody();
         assertEquals(categories.size(), responseCategories.size());
+    }
+
+    @Test
+    public void testGetCategories_Failure() {
+        when(categoryService.getCategories()).thenThrow(new RuntimeException("Mock Exception"));
+
+        ResponseEntity<?> response = categoryController.getCategories();
+
+        assertEquals(500, response.getStatusCodeValue());
+        assertEquals("There is an Exception", response.getBody());
+
+        verify(categoryService, times(1)).getCategories();
     }
 
     @Test
@@ -90,6 +119,20 @@ public class CategoryControllerTest {
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertNull(response.getBody());
+    }
+
+    @Test
+    public void testGetCategoryById_Failure() {
+        Long categoryId = 1L;
+        when(categoryService.getCategory(categoryId)).thenThrow(new RuntimeException("Mock Exception"));
+
+        ResponseEntity<?> response = categoryController.getCategory(categoryId);
+
+        assertEquals(500, response.getStatusCodeValue());
+        assertEquals("There is an Exception", response.getBody());
+
+        // Verify
+        verify(categoryService, times(1)).getCategory(categoryId);
     }
 
     @Test
@@ -123,4 +166,52 @@ public class CategoryControllerTest {
         assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
         assertTrue(response.getBody().toString().contains("Category with id"));
     }
+
+    @Test
+    public void testUpdateCategory_Failure() {
+        Long categoryId = 1L;
+        Category category = new Category();
+        category.setCatId(categoryId);
+        category.setTitle("Updated Title");
+        category.setDescription("Updated Description");
+
+        when(categoryService.getCategory(categoryId)).thenThrow(new RuntimeException("Mock Exception"));
+
+        ResponseEntity<?> response = categoryController.updateCategory(categoryId, category);
+
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR.value(), response.getStatusCodeValue());
+        assertEquals("There is an Exception", response.getBody());
+
+        verify(categoryService, times(1)).getCategory(categoryId);
+        verify(categoryService, never()).updateCategory(any(Category.class));
+    }
+
+    @Test
+    public void testDeleteCategory_Success() {
+        Long categoryId = 1L;
+
+        doNothing().when(categoryService).deleteCategory(categoryId);
+
+        ResponseEntity<?> response = categoryController.deleteCategory(categoryId);
+
+        assertEquals(HttpStatus.OK.value(), response.getStatusCodeValue());
+        assertEquals(true, response.getBody());
+
+        verify(categoryService, times(1)).deleteCategory(categoryId);
+    }
+
+    @Test
+    public void testDeleteCategory_Failure() {
+        Long categoryId = 1L;
+
+        doThrow(new RuntimeException("Mock Exception")).when(categoryService).deleteCategory(categoryId);
+
+        ResponseEntity<?> response = categoryController.deleteCategory(categoryId);
+
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR.value(), response.getStatusCodeValue());
+        assertEquals("There is an Exception", response.getBody());
+
+        verify(categoryService, times(1)).deleteCategory(categoryId);
+    }
+
 }
