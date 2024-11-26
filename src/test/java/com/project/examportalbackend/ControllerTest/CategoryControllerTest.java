@@ -2,6 +2,7 @@ package com.project.examportalbackend.ControllerTest;
 
 import com.project.examportalbackend.controllers.CategoryController;
 import com.project.examportalbackend.models.Category;
+import com.project.examportalbackend.models.Quiz;
 import com.project.examportalbackend.services.CategoryService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -212,6 +213,39 @@ public class CategoryControllerTest {
         assertEquals("There is an Exception", response.getBody());
 
         verify(categoryService, times(1)).deleteCategory(categoryId);
+    }
+
+    @Test
+    public void testToString_Success() {
+        // Create a Category object
+        Category category = new Category();
+        category.setCatId(1L);
+        category.setTitle("Science");
+        category.setDescription("Category for Science Quizzes");
+
+        // Create Quiz objects and add them to the Category
+        Quiz quiz1 = new Quiz();
+        quiz1.setTitle("Physics Quiz");
+        quiz1.setDescription("A quiz on Physics");
+
+        Quiz quiz2 = new Quiz();
+        quiz2.setTitle("Chemistry Quiz");
+        quiz2.setDescription("A quiz on Chemistry");
+
+        List<Quiz> quizzes = new ArrayList<>();
+        quizzes.add(quiz1);
+        quizzes.add(quiz2);
+
+        // Set quizzes list to the Category
+        category.setQuizzes(quizzes);
+
+        // Test the toString method (verify if quizzes field is included in the output)
+        String toStringOutput = category.toString();
+
+        // Verify that the quizzes list is included in the toString output
+        assertTrue(toStringOutput.contains("quizzes"));
+        assertTrue(toStringOutput.contains("Physics Quiz"));
+        assertTrue(toStringOutput.contains("Chemistry Quiz"));
     }
 
 }

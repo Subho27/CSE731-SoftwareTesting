@@ -1,0 +1,192 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Role</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.project.examportalbackend.models</a>
+</div>
+
+<h1>Coverage Summary for Class: Role (com.project.examportalbackend.models)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Role</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/7)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Role$HibernateProxy$0X20WODx</td>
+  </tr>
+  <tr>
+    <td class="name">Role$HibernateProxy$4ij6VB5W</td>
+  </tr>
+  <tr>
+    <td class="name">Role$HibernateProxy$8Om9XCxV</td>
+  </tr>
+  <tr>
+    <td class="name">Role$HibernateProxy$ABLmsqsr</td>
+  </tr>
+  <tr>
+    <td class="name">Role$HibernateProxy$D2XO3eHz</td>
+  </tr>
+  <tr>
+    <td class="name">Role$HibernateProxy$eP1lv30e</td>
+  </tr>
+  <tr>
+    <td class="name">Role$HibernateProxy$giMxMuyw</td>
+  </tr>
+  <tr>
+    <td class="name">Role$HibernateProxy$Hb33aZ2T</td>
+  </tr>
+  <tr>
+    <td class="name">Role$HibernateProxy$IwMgqUUN</td>
+  </tr>
+  <tr>
+    <td class="name">Role$HibernateProxy$LBOJPWlZ</td>
+  </tr>
+  <tr>
+    <td class="name">Role$HibernateProxy$LHlGt7FD</td>
+  </tr>
+  <tr>
+    <td class="name">Role$HibernateProxy$TZ2mv0ex</td>
+  </tr>
+  <tr>
+    <td class="name">Role$RoleBuilder</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (8/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (8/8)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.project.examportalbackend.models;
+&nbsp;
+&nbsp;import lombok.*;
+&nbsp;
+&nbsp;import javax.persistence.Column;
+&nbsp;import javax.persistence.Entity;
+&nbsp;import javax.persistence.Id;
+&nbsp;import javax.persistence.Table;
+&nbsp;
+<b class="fc">&nbsp;@NoArgsConstructor</b>
+<b class="fc">&nbsp;@AllArgsConstructor</b>
+<b class="fc">&nbsp;@ToString</b>
+<b class="fc">&nbsp;@Setter</b>
+&nbsp;@Getter
+<b class="fc">&nbsp;@Builder</b>
+&nbsp;@Entity
+&nbsp;@Table(name = &quot;roles&quot;)
+&nbsp;public class Role {
+&nbsp;
+&nbsp;    @Id
+&nbsp;    @Column(name=&quot;role_name&quot;)
+<b class="fc">&nbsp;    private String roleName;</b>
+&nbsp;
+&nbsp;    @Column(name=&quot;role_description&quot;)
+<b class="fc">&nbsp;    private String roleDescription;</b>
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-11-26 13:57</div>
+</div>
+</body>
+</html>

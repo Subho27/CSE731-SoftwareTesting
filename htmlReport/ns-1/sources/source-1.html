@@ -1,0 +1,145 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ExamPortalBackendApplication</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.project.examportalbackend</a>
+</div>
+
+<h1>Coverage Summary for Class: ExamPortalBackendApplication (com.project.examportalbackend)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ExamPortalBackendApplication</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ExamPortalBackendApplication$$EnhancerBySpringCGLIB$$462beb06</td>
+  </tr>
+  <tr>
+    <td class="name">ExamPortalBackendApplication$$EnhancerBySpringCGLIB$$462beb06$$FastClassBySpringCGLIB$$fa60be60</td>
+  </tr>
+  <tr>
+    <td class="name">ExamPortalBackendApplication$$FastClassBySpringCGLIB$$c9ca26e</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.project.examportalbackend;
+&nbsp;
+&nbsp;import com.project.examportalbackend.models.Role;
+&nbsp;import com.project.examportalbackend.repository.RoleRepository;
+&nbsp;import org.springframework.boot.ApplicationRunner;
+&nbsp;import org.springframework.boot.SpringApplication;
+&nbsp;import org.springframework.boot.autoconfigure.SpringBootApplication;
+&nbsp;import org.springframework.context.annotation.Bean;
+&nbsp;
+&nbsp;import java.util.Arrays;
+&nbsp;
+&nbsp;@SpringBootApplication
+<b class="fc">&nbsp;public class ExamPortalBackendApplication {</b>
+&nbsp;
+&nbsp;	public static void main(String[] args) {
+<b class="fc">&nbsp;		SpringApplication.run(ExamPortalBackendApplication.class, args);</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	@Bean
+&nbsp;	public ApplicationRunner initializer(RoleRepository roleRepository) {
+<b class="fc">&nbsp;		return args -&gt; roleRepository.saveAll(Arrays.asList(</b>
+<b class="fc">&nbsp;				Role.builder().roleName(&quot;USER&quot;).roleDescription(&quot;Default Role provided to each user&quot;).build(),</b>
+<b class="fc">&nbsp;				Role.builder().roleName(&quot;ADMIN&quot;).roleDescription(&quot;Superuser, who has access for all functionality&quot;).build()));</b>
+&nbsp;	}
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-11-26 13:57</div>
+</div>
+</body>
+</html>

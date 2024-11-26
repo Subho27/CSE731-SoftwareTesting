@@ -194,14 +194,21 @@ public class QuizResultControllerTest {
     @Test
     public void testGetQuizResultsFullExecution_Success() {
         Long userId = 1L;
+        Long quizResId = 1L;
+
         QuizResult quizResult = new QuizResult();
         quizResult.setUserId(userId);
         quizResult.setAttemptDatetime("2024-11-23 12:00:00");
-        quizResult.setQuiz(new Quiz());
-        quizResult.setQuizResId(1L);
+        quizResult.setQuizResId(quizResId);
         quizResult.setTotalObtainedMarks(50);
 
+        Quiz quiz = new Quiz();
+        quiz.setQuizId(101L);
+        quiz.setTitle("Sample Quiz");
+        quizResult.setQuiz(quiz);
+
         List<QuizResult> quizResultsList = Arrays.asList(quizResult);
+
         User user = new User();
         user.setFirstName("John");
         user.setLastName("Doe");
@@ -212,14 +219,23 @@ public class QuizResultControllerTest {
         ResponseEntity<?> response = quizResultController.getQuizResults();
 
         assertEquals(HttpStatus.OK.value(), response.getStatusCodeValue());
-        List<QuizResultDTO> students = (List<QuizResultDTO>) response.getBody();
-        assertEquals(1, students.size());
-        assertEquals("John Doe", students.get(0).getName());
-        assertEquals("2024-11-23 12:00:00", students.get(0).getAttemptDatetime());
-        assertEquals(50, students.get(0).getTotalObtainedMarks());
+
+        List<QuizResultDTO> quizResultDTOList = (List<QuizResultDTO>) response.getBody();
+        assertEquals(1, quizResultDTOList.size());
+
+        QuizResultDTO resultDTO = quizResultDTOList.get(0);
+        assertEquals("John Doe", resultDTO.getName());
+        assertEquals("2024-11-23 12:00:00", resultDTO.getAttemptDatetime());
+        assertEquals(50, resultDTO.getTotalObtainedMarks());
+        assertEquals(quizResId, resultDTO.getQuizResId());
+        assertNotNull(resultDTO.getQuiz());
+        assertEquals(101L, resultDTO.getQuiz().getQuizId());
+        assertEquals("Sample Quiz", resultDTO.getQuiz().getTitle());
+
         verify(quizResultService, times(1)).getQuizResults();
         verify(userRepository, times(1)).findUserByUserId(userId);
     }
+
 
     @Test
     public void testGetQuizResultsEx_Failure() {
