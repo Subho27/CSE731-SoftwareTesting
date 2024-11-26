@@ -1,0 +1,26 @@
+<root><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><type name="com.project.examportalbackend.models.QuizResult" s="7"  vis="public"  kind="class"  dep ="false" fin ="false" sta ="false" abs ="false" n ="false" c="0" >
+<annotations>
+<annotation name="UnresolvedPackage.Entity"/>
+<annotation name="lombok.Getter"/>
+<annotation name="lombok.Setter"/>
+<annotation name="lombok.ToString"/>
+<annotation name="lombok.NoArgsConstructor"/>
+<annotation name="lombok.AllArgsConstructor"/>
+<annotation name="UnresolvedPackage.Table"/>
+</annotations><dt type="UnresolvedPackage.Entity"/><dt type="lombok.Getter"/><dt type="lombok.Setter"/><dt type="lombok.ToString"/><dt type="lombok.NoArgsConstructor"/><dt type="lombok.AllArgsConstructor"/><dt type="UnresolvedPackage.Table"/><dt type="com.project.examportalbackend.models.QuizResult"/><field name="quizResId" s="16" type="java.lang.Long" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Id"/><annotation name="UnresolvedPackage.GeneratedValue"/></annotations></field>
+<dt type="UnresolvedPackage.Id"/><dt type="UnresolvedPackage.GeneratedValue"/><dt type="java.lang.Long"/><f p="com.project.examportalbackend.models.QuizResult" s="quizResId"/>
+<field name="userId" s="20" type="java.lang.Long" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.Long"/><f p="com.project.examportalbackend.models.QuizResult" s="userId"/>
+<field name="totalObtainedMarks" s="23" type="float" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><f p="com.project.examportalbackend.models.QuizResult" s="totalObtainedMarks"/>
+<field name="attemptDatetime" s="26" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.QuizResult" s="attemptDatetime"/>
+<field name="quiz" s="29" type="com.project.examportalbackend.models.Quiz" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.ManyToOne"/></annotations></field>
+<dt type="UnresolvedPackage.ManyToOne"/><dt type="com.project.examportalbackend.models.Quiz"/><f p="com.project.examportalbackend.models.QuizResult" s="quiz"/>
+
+</type></root>

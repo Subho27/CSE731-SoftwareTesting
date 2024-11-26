@@ -1,0 +1,13 @@
+<root><dt type="lombok.AllArgsConstructor"/><dt type="lombok.AllArgsConstructor"/><dt type="lombok.Getter"/><dt type="lombok.Getter"/><dt type="lombok.Setter"/><dt type="lombok.Setter"/><type name="com.project.examportalbackend.models.LoginRequest" s="7"  vis="public"  kind="class"  dep ="false" fin ="false" sta ="false" abs ="false" n ="false" c="0" >
+<annotations>
+<annotation name="lombok.Getter"/>
+<annotation name="lombok.Setter"/>
+<annotation name="lombok.AllArgsConstructor"/>
+</annotations><dt type="lombok.Getter"/><dt type="lombok.Setter"/><dt type="lombok.AllArgsConstructor"/><dt type="com.project.examportalbackend.models.LoginRequest"/><field name="username" s="11" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+</field>
+<dt type="java.lang.String"/><f p="com.project.examportalbackend.models.LoginRequest" s="username"/>
+<field name="password" s="12" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+</field>
+<dt type="java.lang.String"/><f p="com.project.examportalbackend.models.LoginRequest" s="password"/>
+
+</type></root>

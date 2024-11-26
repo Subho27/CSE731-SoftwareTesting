@@ -1,0 +1,36 @@
+<root><dt type="lombok.Getter"/><dt type="lombok.Getter"/><dt type="lombok.Setter"/><dt type="lombok.Setter"/><dt type="lombok.ToString"/><dt type="lombok.ToString"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><type name="com.project.examportalbackend.models.Question" s="9"  vis="public"  kind="class"  dep ="false" fin ="false" sta ="false" abs ="false" n ="false" c="0" >
+<annotations>
+<annotation name="UnresolvedPackage.Entity"/>
+<annotation name="lombok.Getter"/>
+<annotation name="lombok.Setter"/>
+<annotation name="lombok.ToString"/>
+<annotation name="UnresolvedPackage.Table"/>
+</annotations><dt type="UnresolvedPackage.Entity"/><dt type="lombok.Getter"/><dt type="lombok.Setter"/><dt type="lombok.ToString"/><dt type="UnresolvedPackage.Table"/><dt type="com.project.examportalbackend.models.Question"/><field name="quesId" s="16" type="java.lang.Long" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Id"/><annotation name="UnresolvedPackage.GeneratedValue"/></annotations></field>
+<dt type="UnresolvedPackage.Id"/><dt type="UnresolvedPackage.GeneratedValue"/><dt type="java.lang.Long"/><f p="com.project.examportalbackend.models.Question" s="quesId"/>
+<field name="content" s="20" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.Question" s="content"/>
+<field name="image" s="23" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.Question" s="image"/>
+<field name="option1" s="26" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.Question" s="option1"/>
+<field name="option2" s="29" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.Question" s="option2"/>
+<field name="option3" s="32" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.Question" s="option3"/>
+<field name="option4" s="35" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.Question" s="option4"/>
+<field name="answer" s="38" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.Question" s="answer"/>
+<field name="quiz" s="41" type="com.project.examportalbackend.models.Quiz" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.ManyToOne"/></annotations></field>
+<dt type="UnresolvedPackage.ManyToOne"/><dt type="com.project.examportalbackend.models.Quiz"/><f p="com.project.examportalbackend.models.Question" s="quiz"/>
+
+</type></root>

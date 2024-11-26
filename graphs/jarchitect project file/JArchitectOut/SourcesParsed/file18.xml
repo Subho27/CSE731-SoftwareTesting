@@ -1,0 +1,5 @@
+<root><dt type="com.project.examportalbackend.models.Category"/><dt type="com.project.examportalbackend.models.Category"/><dt type="UnresolvedPackage.data"/><dt type="UnresolvedPackage.data"/><dt type="UnresolvedPackage.data"/><dt type="UnresolvedPackage.data"/><dt type="UnresolvedPackage.data"/><dt type="UnresolvedPackage.data"/><dt type="UnresolvedPackage.data"/><dt type="UnresolvedPackage.data"/><type name="com.project.examportalbackend.repository.CategoryRepository" s="7"  vis="public"  kind="interface"  dep ="false" fin ="false" sta ="false" abs ="false" n ="false" c="0" >
+<interfaces>
+<interface name="UnresolvedPackage.JpaRepository"/>
+</interfaces><dt type="com.project.examportalbackend.repository.CategoryRepository"/><dt type="UnresolvedPackage.JpaRepository"/><dt type="com.project.examportalbackend.models.Category"/><dt type="java.lang.Long"/>
+</type></root>

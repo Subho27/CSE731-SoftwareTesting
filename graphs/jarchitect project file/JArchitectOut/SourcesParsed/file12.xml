@@ -1,0 +1,18 @@
+<root><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><type name="com.project.examportalbackend.models.Role" s="10"  vis="public"  kind="class"  dep ="false" fin ="false" sta ="false" abs ="false" n ="false" c="0" >
+<annotations>
+<annotation name="lombok.NoArgsConstructor"/>
+<annotation name="lombok.AllArgsConstructor"/>
+<annotation name="lombok.ToString"/>
+<annotation name="lombok.Setter"/>
+<annotation name="lombok.Getter"/>
+<annotation name="lombok.Builder"/>
+<annotation name="UnresolvedPackage.Entity"/>
+<annotation name="UnresolvedPackage.Table"/>
+</annotations><dt type="lombok.NoArgsConstructor"/><dt type="lombok.AllArgsConstructor"/><dt type="lombok.ToString"/><dt type="lombok.Setter"/><dt type="lombok.Getter"/><dt type="lombok.Builder"/><dt type="UnresolvedPackage.Entity"/><dt type="UnresolvedPackage.Table"/><dt type="com.project.examportalbackend.models.Role"/><field name="roleName" s="20" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Id"/><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Id"/><dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.Role" s="roleName"/>
+<field name="roleDescription" s="24" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.Role" s="roleDescription"/>
+
+</type></root>

@@ -1,0 +1,35 @@
+<root><dt type="UnresolvedPackage.fasterxml"/><dt type="UnresolvedPackage.fasterxml"/><dt type="UnresolvedPackage.fasterxml"/><dt type="UnresolvedPackage.fasterxml"/><dt type="UnresolvedPackage.fasterxml"/><dt type="UnresolvedPackage.fasterxml"/><dt type="UnresolvedPackage.fasterxml"/><dt type="UnresolvedPackage.fasterxml"/><dt type="lombok.Getter"/><dt type="lombok.Getter"/><dt type="lombok.Setter"/><dt type="lombok.Setter"/><dt type="lombok.ToString"/><dt type="lombok.ToString"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><dt type="java.util.ArrayList"/><dt type="java.util.ArrayList"/><dt type="java.util.HashSet"/><dt type="java.util.HashSet"/><dt type="java.util.List"/><dt type="java.util.List"/><dt type="java.util.Set"/><dt type="java.util.Set"/><type name="com.project.examportalbackend.models.Quiz" s="14"  vis="public"  kind="class"  dep ="false" fin ="false" sta ="false" abs ="false" n ="false" c="0" >
+<annotations>
+<annotation name="UnresolvedPackage.Entity"/>
+<annotation name="lombok.Getter"/>
+<annotation name="lombok.Setter"/>
+<annotation name="lombok.ToString"/>
+<annotation name="UnresolvedPackage.Table"/>
+</annotations><dt type="UnresolvedPackage.Entity"/><dt type="lombok.Getter"/><dt type="lombok.Setter"/><dt type="lombok.ToString"/><dt type="UnresolvedPackage.Table"/><dt type="com.project.examportalbackend.models.Quiz"/><field name="quizId" s="21" type="java.lang.Long" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Id"/><annotation name="UnresolvedPackage.GeneratedValue"/></annotations></field>
+<dt type="UnresolvedPackage.Id"/><dt type="UnresolvedPackage.GeneratedValue"/><dt type="java.lang.Long"/><f p="com.project.examportalbackend.models.Quiz" s="quizId"/>
+<field name="title" s="25" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.Quiz" s="title"/>
+<field name="description" s="28" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.Quiz" s="description"/>
+<field name="iActive" s="31" type="boolean" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><f p="com.project.examportalbackend.models.Quiz" s="iActive"/>
+<field name="numOfQuestions" s="34" type="int" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><f p="com.project.examportalbackend.models.Quiz" s="numOfQuestions"/>
+<field name="category" s="37" type="com.project.examportalbackend.models.Category" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.ManyToOne"/></annotations></field>
+<dt type="UnresolvedPackage.ManyToOne"/><dt type="com.project.examportalbackend.models.Category"/><f p="com.project.examportalbackend.models.Quiz" s="category"/>
+<field name="questions" s="40" type="java.util.Set" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.OneToMany"/><annotation name="UnresolvedPackage.JsonIgnore"/></annotations></field>
+<dt type="UnresolvedPackage.OneToMany"/><dt type="UnresolvedPackage.JsonIgnore"/><dt type="java.util.Set"/><dt type="com.project.examportalbackend.models.Question"/><f p="com.project.examportalbackend.models.Quiz" s="questions"/>
+<dm p="java.util.HashSet" s="HashSet&lt;Question&gt;()"/>
+<dt type="java.util.HashSet"/><field name="quizResults" s="44" type="java.util.List" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.OneToMany"/><annotation name="UnresolvedPackage.JsonIgnore"/></annotations></field>
+<dt type="UnresolvedPackage.OneToMany"/><dt type="UnresolvedPackage.JsonIgnore"/><dt type="java.util.List"/><dt type="com.project.examportalbackend.models.QuizResult"/><f p="com.project.examportalbackend.models.Quiz" s="quizResults"/>
+<dm p="java.util.ArrayList" s="ArrayList&lt;QuizResult&gt;()"/>
+<dt type="java.util.ArrayList"/>
+</type></root>

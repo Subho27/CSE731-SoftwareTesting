@@ -1,0 +1,20 @@
+<root><dt type="com.project.examportalbackend.models.Quiz"/><dt type="com.project.examportalbackend.models.Quiz"/><dt type="lombok.Data"/><dt type="lombok.Data"/><type name="com.project.examportalbackend.DTO.QuizResultDTO" s="6"  vis="public"  kind="class"  dep ="false" fin ="false" sta ="false" abs ="false" n ="false" c="0" >
+<annotations>
+<annotation name="lombok.Data"/>
+</annotations><dt type="lombok.Data"/><dt type="com.project.examportalbackend.DTO.QuizResultDTO"/><field name="quizResId" s="8" type="java.lang.Long" vis="private"  fin ="false" sta ="false" c="0" >
+</field>
+<dt type="java.lang.Long"/><f p="com.project.examportalbackend.DTO.QuizResultDTO" s="quizResId"/>
+<field name="name" s="9" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+</field>
+<dt type="java.lang.String"/><f p="com.project.examportalbackend.DTO.QuizResultDTO" s="name"/>
+<field name="totalObtainedMarks" s="10" type="float" vis="private"  fin ="false" sta ="false" c="0" >
+</field>
+<f p="com.project.examportalbackend.DTO.QuizResultDTO" s="totalObtainedMarks"/>
+<field name="attemptDatetime" s="11" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+</field>
+<dt type="java.lang.String"/><f p="com.project.examportalbackend.DTO.QuizResultDTO" s="attemptDatetime"/>
+<field name="quiz" s="12" type="com.project.examportalbackend.models.Quiz" vis="private"  fin ="false" sta ="false" c="0" >
+</field>
+<dt type="com.project.examportalbackend.models.Quiz"/><f p="com.project.examportalbackend.DTO.QuizResultDTO" s="quiz"/>
+
+</type></root>

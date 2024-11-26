@@ -1,0 +1,45 @@
+<root><dt type="UnresolvedPackage.core"/><dt type="UnresolvedPackage.core"/><dt type="UnresolvedPackage.core"/><dt type="UnresolvedPackage.core"/><dt type="UnresolvedPackage.core"/><dt type="UnresolvedPackage.core"/><dt type="UnresolvedPackage.core"/><dt type="UnresolvedPackage.core"/><dt type="UnresolvedPackage.core"/><dt type="UnresolvedPackage.core"/><dt type="UnresolvedPackage.core"/><dt type="UnresolvedPackage.core"/><dt type="UnresolvedPackage.core"/><dt type="UnresolvedPackage.core"/><dt type="UnresolvedPackage.core"/><dt type="UnresolvedPackage.core"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><dt type="java.util.Collection"/><dt type="java.util.Collection"/><dt type="java.util.HashSet"/><dt type="java.util.HashSet"/><dt type="java.util.Set"/><dt type="java.util.Set"/><type name="com.project.examportalbackend.models.User" s="13"  vis="public"  kind="class"  dep ="false" fin ="false" sta ="false" abs ="false" n ="false" c="0" >
+<interfaces>
+<interface name="UnresolvedPackage.UserDetails"/>
+</interfaces><annotations>
+<annotation name="lombok.NoArgsConstructor"/>
+<annotation name="lombok.AllArgsConstructor"/>
+<annotation name="lombok.Getter"/>
+<annotation name="lombok.Setter"/>
+<annotation name="lombok.ToString"/>
+<annotation name="UnresolvedPackage.Entity"/>
+<annotation name="UnresolvedPackage.Table"/>
+</annotations><dt type="lombok.NoArgsConstructor"/><dt type="lombok.AllArgsConstructor"/><dt type="lombok.Getter"/><dt type="lombok.Setter"/><dt type="lombok.ToString"/><dt type="UnresolvedPackage.Entity"/><dt type="UnresolvedPackage.Table"/><dt type="com.project.examportalbackend.models.User"/><dt type="UnresolvedPackage.UserDetails"/><field name="userId" s="21" type="long" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Id"/><annotation name="UnresolvedPackage.GeneratedValue"/><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Id"/><dt type="UnresolvedPackage.GeneratedValue"/><dt type="UnresolvedPackage.Column"/><f p="com.project.examportalbackend.models.User" s="userId"/>
+<field name="firstName" s="26" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.User" s="firstName"/>
+<field name="lastName" s="29" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.User" s="lastName"/>
+<field name="username" s="32" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.User" s="username"/>
+<field name="password" s="35" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.User" s="password"/>
+<field name="phoneNumber" s="38" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.User" s="phoneNumber"/>
+<field name="isActive" s="41" type="boolean" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><f p="com.project.examportalbackend.models.User" s="isActive"/>
+<field name="roles" s="44" type="java.util.Set" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.ManyToMany"/><annotation name="UnresolvedPackage.JoinTable"/></annotations></field>
+<dt type="UnresolvedPackage.ManyToMany"/><dt type="UnresolvedPackage.JoinTable"/><dt type="UnresolvedPackage.JoinColumn"/><dt type="UnresolvedPackage.JoinColumn"/><dt type="java.util.Set"/><dt type="com.project.examportalbackend.models.Role"/><f p="com.project.examportalbackend.models.User" s="roles"/>
+<method name="getAuthorities()" name2="getAuthorities()" s="55" e="60" n ="false" sta ="false" sync ="false" vis="public" return="java.util.Collection"  signature="()"><annotations><annotation name="java.lang.Override"/></annotations><dt type="java.lang.Override"/><dt type="UnresolvedPackage.Collection"/><dt type="UnresolvedPackage.GrantedAuthority"/><dt type="UnresolvedPackage.Set"/><dt type="UnresolvedPackage.SimpleGrantedAuthority"/><dm p="UnresolvedPackage.HashSet" s="HashSet&lt;SimpleGrantedAuthority&gt;()"/>
+<dt type="UnresolvedPackage.HashSet"/><dm p="java.lang.Iterable" s="forEach(java.util.function.Consumer)" s2="forEach(Consumer)"/>
+<f p="com.project.examportalbackend.models.User" s="roles"/>
+<f p="com.project.examportalbackend.models.User" s="roles"/>
+<f p="com.project.examportalbackend.models.User" s="roles"/>
+<dm p="java.lang.Object" s="Object()"/>
+<dt type="UnresolvedPackage.SimpleGrantedAuthority"/><metrics cc="1" cm="0" n1="20" n2="1" N1="19" N2="3" vars="2" loc="3"/></method><method name="isAccountNonExpired()" name2="isAccountNonExpired()" s="62" e="65" n ="false" sta ="false" sync ="false" vis="public" return="boolean"  signature="()"><annotations><annotation name="java.lang.Override"/></annotations><dt type="java.lang.Override"/><metrics cc="1" cm="0" n1="2" n2="0" N1="1" N2="0" vars="0" loc="1"/></method><method name="isAccountNonLocked()" name2="isAccountNonLocked()" s="67" e="70" n ="false" sta ="false" sync ="false" vis="public" return="boolean"  signature="()"><annotations><annotation name="java.lang.Override"/></annotations><dt type="java.lang.Override"/><metrics cc="1" cm="0" n1="2" n2="0" N1="1" N2="0" vars="0" loc="1"/></method><method name="isCredentialsNonExpired()" name2="isCredentialsNonExpired()" s="72" e="75" n ="false" sta ="false" sync ="false" vis="public" return="boolean"  signature="()"><annotations><annotation name="java.lang.Override"/></annotations><dt type="java.lang.Override"/><metrics cc="1" cm="0" n1="2" n2="0" N1="1" N2="0" vars="0" loc="1"/></method><method name="isEnabled()" name2="isEnabled()" s="77" e="80" n ="false" sta ="false" sync ="false" vis="public" return="boolean"  signature="()"><annotations><annotation name="java.lang.Override"/></annotations><dt type="java.lang.Override"/><f p="com.project.examportalbackend.models.User" s="isActive"/>
+<f p="com.project.examportalbackend.models.User" s="isActive"/>
+<metrics cc="1" cm="0" n1="1" n2="0" N1="1" N2="0" vars="0" loc="1"/></method>
+</type></root>

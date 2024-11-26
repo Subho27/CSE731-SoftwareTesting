@@ -1,0 +1,23 @@
+!SESSION 2024-11-26 15:28:27.508 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=20.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -output F:\CP\New folder\JArchitectOut\SourcesParsed
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data F:\CP\New folder\JArchitectOut\SourcesParsed/w581 -clean -output F:\CP\New folder\JArchitectOut\SourcesParsed
+
+!ENTRY org.eclipse.core.jobs 4 2 2024-11-26 15:28:32.146
+!MESSAGE An internal error occurred during: "Repository registry initialization".
+!STACK 0
+java.lang.IllegalStateException: m2e is shut down!
+	at org.eclipse.m2e.core.embedder.IMavenConfiguration.getWorkspaceConfiguration(IMavenConfiguration.java:136)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.newExecutionRequest(MavenExecutionContext.java:152)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:241)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:214)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.getMirror(MavenImpl.java:954)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.updateRegistry(RepositoryRegistry.java:263)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistryUpdateJob.run(RepositoryRegistryUpdateJob.java:50)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-11-26 15:28:32.363
+!MESSAGE The workspace will exit with unsaved changes in this session.

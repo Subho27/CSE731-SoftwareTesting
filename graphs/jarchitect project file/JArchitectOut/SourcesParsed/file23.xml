@@ -1,0 +1,5 @@
+<root><dt type="com.project.examportalbackend.models.Role"/><dt type="com.project.examportalbackend.models.Role"/><dt type="UnresolvedPackage.data"/><dt type="UnresolvedPackage.data"/><dt type="UnresolvedPackage.data"/><dt type="UnresolvedPackage.data"/><dt type="UnresolvedPackage.data"/><dt type="UnresolvedPackage.data"/><dt type="UnresolvedPackage.data"/><dt type="UnresolvedPackage.data"/><type name="com.project.examportalbackend.repository.RoleRepository" s="6"  vis="public"  kind="interface"  dep ="false" fin ="false" sta ="false" abs ="false" n ="false" c="0" >
+<interfaces>
+<interface name="UnresolvedPackage.JpaRepository"/>
+</interfaces><dt type="com.project.examportalbackend.repository.RoleRepository"/><dt type="UnresolvedPackage.JpaRepository"/><dt type="com.project.examportalbackend.models.Role"/><dt type="java.lang.String"/>
+</type></root>

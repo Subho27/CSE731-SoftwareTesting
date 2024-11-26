@@ -1,0 +1,22 @@
+<root><dt type="UnresolvedPackage.fasterxml"/><dt type="UnresolvedPackage.fasterxml"/><dt type="UnresolvedPackage.fasterxml"/><dt type="UnresolvedPackage.fasterxml"/><dt type="UnresolvedPackage.fasterxml"/><dt type="UnresolvedPackage.fasterxml"/><dt type="UnresolvedPackage.fasterxml"/><dt type="UnresolvedPackage.fasterxml"/><dt type="lombok.Getter"/><dt type="lombok.Getter"/><dt type="lombok.Setter"/><dt type="lombok.Setter"/><dt type="lombok.ToString"/><dt type="lombok.ToString"/><dt type="UnresolvedPackage.persistence"/><dt type="UnresolvedPackage.persistence"/><dt type="java.util.ArrayList"/><dt type="java.util.ArrayList"/><dt type="java.util.List"/><dt type="java.util.List"/><type name="com.project.examportalbackend.models.Category" s="12"  vis="public"  kind="class"  dep ="false" fin ="false" sta ="false" abs ="false" n ="false" c="0" >
+<annotations>
+<annotation name="UnresolvedPackage.Entity"/>
+<annotation name="lombok.Getter"/>
+<annotation name="lombok.Setter"/>
+<annotation name="lombok.ToString"/>
+<annotation name="UnresolvedPackage.Table"/>
+</annotations><dt type="UnresolvedPackage.Entity"/><dt type="lombok.Getter"/><dt type="lombok.Setter"/><dt type="lombok.ToString"/><dt type="UnresolvedPackage.Table"/><dt type="com.project.examportalbackend.models.Category"/><field name="catId" s="19" type="java.lang.Long" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Id"/><annotation name="UnresolvedPackage.GeneratedValue"/></annotations></field>
+<dt type="UnresolvedPackage.Id"/><dt type="UnresolvedPackage.GeneratedValue"/><dt type="java.lang.Long"/><f p="com.project.examportalbackend.models.Category" s="catId"/>
+<field name="title" s="23" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.Category" s="title"/>
+<field name="description" s="26" type="java.lang.String" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.Column"/></annotations></field>
+<dt type="UnresolvedPackage.Column"/><dt type="java.lang.String"/><f p="com.project.examportalbackend.models.Category" s="description"/>
+<field name="quizzes" s="29" type="java.util.List" vis="private"  fin ="false" sta ="false" c="0" >
+<annotations><annotation name="UnresolvedPackage.OneToMany"/><annotation name="UnresolvedPackage.JsonIgnore"/></annotations></field>
+<dt type="UnresolvedPackage.OneToMany"/><dt type="UnresolvedPackage.JsonIgnore"/><dt type="java.util.List"/><dt type="com.project.examportalbackend.models.Quiz"/><f p="com.project.examportalbackend.models.Category" s="quizzes"/>
+<dm p="java.util.ArrayList" s="ArrayList&lt;Quiz&gt;()"/>
+<dt type="java.util.ArrayList"/>
+</type></root>
