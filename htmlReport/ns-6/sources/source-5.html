@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>Coverage Report > QuestionRepository</title>
+  <title>Coverage Report > QuizResultRepository</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -22,7 +22,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">com.project.examportalbackend.repository</a>
 </div>
 
-<h1>Coverage Summary for Class: QuestionRepository (com.project.examportalbackend.repository)</h1>
+<h1>Coverage Summary for Class: QuizResultRepository (com.project.examportalbackend.repository)</h1>
 
 <table class="coverageStats">
 
@@ -30,13 +30,13 @@ Current scope:     <a href="../../index.html">all classes</a>
   <th class="name">Class</th>
 </tr>
   <tr>
-    <td class="name">QuestionRepository$MockitoMock$ssUhnQRZ</td>
+    <td class="name">QuizResultRepository$MockitoMock$uahr638I</td>
   </tr>
   <tr>
-    <td class="name">QuestionRepository$MockitoMock$ssUhnQRZ$auxiliary$2tyCxay4</td>
+    <td class="name">QuizResultRepository$MockitoMock$uahr638I$auxiliary$GLUshJf0</td>
   </tr>
   <tr>
-    <td class="name">QuestionRepository$MockitoMock$ssUhnQRZ$auxiliary$XriMPpXy</td>
+    <td class="name">QuizResultRepository$MockitoMock$uahr638I$auxiliary$sZ3MQWyR</td>
   </tr>
 <tr>
   <td class="name"><strong>Total</strong></td>
@@ -50,15 +50,13 @@ Current scope:     <a href="../../index.html">all classes</a>
 <pre>
 <code class="sourceCode" id="sourceCode">&nbsp;package com.project.examportalbackend.repository;
 &nbsp;
-&nbsp;import com.project.examportalbackend.models.Question;
-&nbsp;import com.project.examportalbackend.models.Quiz;
+&nbsp;import com.project.examportalbackend.models.QuizResult;
 &nbsp;import org.springframework.data.jpa.repository.JpaRepository;
 &nbsp;
 &nbsp;import java.util.List;
 &nbsp;
-&nbsp;
-&nbsp;public interface QuestionRepository extends JpaRepository&lt;Question, Long&gt; {
-&nbsp;    List&lt;Question&gt; findByQuiz(Quiz quiz);
+&nbsp;public interface QuizResultRepository extends JpaRepository&lt;QuizResult, Long&gt; {
+&nbsp;    List&lt;QuizResult&gt; findByUserId(Long userId);
 &nbsp;}
 </code>
 </pre>
@@ -83,7 +81,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2024-11-26 13:57</div>
+    <div style="float:right;">generated on 2024-11-27 14:53</div>
 </div>
 </body>
 </html>
